@@ -9,27 +9,39 @@ html, body {
 }
 
 .faq_title {
-
+    /* font-weight: bold; */
+    color: #bce0e0;
+    cursor: pointer;
 }
 
 .faq_answer {
     /* padding-left: 15px;
     display: none; */
     /* ---------faq_answer div박스 내용 숨기는 2가지 방법 위,아래---------------- */
-    /* height: 0;
-    overflow: hidden; */
+    height: 0;
+    overflow: hidden;
 }
 
 #btn_all_close {
-
+    margin-bottom: 10px;
+    background-color: #34323b;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    float: right;
+    border-radius: 5px 5px 0px 0px;
 }
 
 #btn_all_close:hover {
-
+    background-color: rgb(65, 64, 82);
+    color: white;
+    transition: all .45s; /*색바뀌는 시간 지연*/
 }
 /* faq_answer의 div박스 숨김/표시 기능 위해서active 사용 */
+/*display가 none->block, height 0->160px바뀌면서 보여짐*/
 .active {
-
+    display: block;
+    height: 160px;
 }
 
 h1 {
