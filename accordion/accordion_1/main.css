@@ -10,7 +10,7 @@ html, body {
 
 .faq_title {
     /* font-weight: bold; */
-    color: #bce0e0;
+    color: #92e0e0;
     cursor: pointer;
 }
 
@@ -20,6 +20,7 @@ html, body {
     /* ---------faq_answer div박스 내용 숨기는 2가지 방법 위,아래---------------- */
     height: 0;
     overflow: hidden;
+    transition: all .35s;
 }
 
 #btn_all_close {
@@ -41,7 +42,7 @@ html, body {
 /*display가 none->block, height 0->160px바뀌면서 보여짐*/
 .active {
     display: block;
-    height: 160px;
+    height: 165.5px;
 }
 
 h1 {
