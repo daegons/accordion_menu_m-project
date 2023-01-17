@@ -19,8 +19,8 @@ button:hover {
 .butn {
     background-color: #424b5f;
     width: 150px;
-    margin-bottom: 0;  /*위쪽에 모든 버튼 margin-bottom 10px써서 0으로 해줘야됨*/
-    float: none; /*상단 button에 float:right 적용되있어서 안먹힘 none적용해야함*/
+     margin-bottom: 0;  /*위쪽에 모든 버튼 margin-bottom 10px써서 0으로 해줘야됨 */
+     float: none; /*상단 button에 float:right 적용되있어서 안먹힘 none적용해야함 */
 }
 
 
