@@ -15,6 +15,7 @@ btnAll.addEventListener('click',() => {
    const getData = localStorage.getItem('background-color');
    console.log(getData);                    //(key에 해당)
 
+
    //key만 출력하기
    console.log(localStorage.key(0)); //user-id
    console.log(localStorage.key(1)); //color
@@ -75,15 +76,46 @@ console.log(ar[0].pastime);//웹개발
 
     //------------------------------------------------------------
     //결과 변수 --> 우선 반복문 쓰지 않고 하나만 출력.
-    let result = "";
-    result +="<tr>";
-    result +="<td class='align-middle' width='30%'>"+localStorage.key(2)+"</td>";
-    result +="<td class='align-middle' width='30%'>"+localStorage.getItem(localStorage.key(2))+"</td>"
-    result +="<td class='remove_box'><button class='btnRemove butn'>Remove</button></td>"
-    result +="<tr>";
+    // let result = "";
+    // result +="<tr>";
+    // result +="<td class='align-middle' width='30%'>"+localStorage.key(2)+"</td>";
+    // result +="<td class='align-middle' width='30%'>"+localStorage.getItem(localStorage.key(2))+"</td>"
+    // result +="<td class='remove_box'><button class='btnRemove butn'>Remove</button></td><td></td>"
+    // result +="<tr>";
 
-    let hTbody = document.getElementById('htmlTbody');
-    console.log(result);
-    hTbody.innerHTML = result;
+    // let hTbody = document.getElementById('htmlTbody');
+    // console.log(result);
+    // hTbody.innerHTML = result;
     //------------------------------------------------------------
+
+
+
+
+    //------------------------------------------------------------
+    //key순회하면서 key:value 값들 출력하기
+    //------------------------------------------------------------
+    console.log('로컬 스토리지 길이 = '+localStorage.length); //5출력
+
+    let ar = new Array();
+    let result2 ="";
+
+    for (let i = 0; i < localStorage.length; i++) {
+        let key = localStorage.key(i);
+        console.log(`${key} : ${localStorage.getItem(key)}`);
+
+        //결과 변수
+        result2 +="<tr>"
+        result2 +="<td class='align-middle' width='30%'>"+ key +"</td>"
+        result2 +="<td class='align-middle'>"+ localStorage.getItem(key) +"</td>"
+        result2 +="<td class='remove_box'><button class='btnRemove butn'>Remove</button></td><td></td>"  //<td></td> 하나 끝에 추가해서 pastime공백 박스 매꿈
+        result2 +="</tr>"
+
+        //배열에 저장
+        ar.push(result2);
+    }
+    console.log(ar);
+
+    //Append(붙이기) 제이쿼리로
+    $('#htmlTbody').empty();
+    $('#htmlTbody').append(result2);
 });
