@@ -37,4 +37,25 @@ btnCrc.addEventListener('click',() => {
 
     const newText3 = document.createTextNode('웹개발'); //텍스트 노드 만든 것
     newCell3.appendChild(newText3); //Cell에 붙이기
+
+
+
+    //테이블 row구하기
+    const table = document.getElementById('myTable');
+    console.log(table.rows.length-1); //thead가 있어서 순수row만 알기 위해서 -1해줌
+    // console.log(table.rows[0]); //thead를 나타냄
+    // console.log(table.rows[1]); //tbody를 나타냄
+
+    //cell개수 구하려면..
+    const row = table.rows.length-1; //thead뺀 순수 row
+    const cellLeng = table.rows[row].cells.length //해당 row의 셀 개수
+    console.log(`thead제외 순수 row : ${row}`);
+    console.log(`셀 개수 : ${cellLeng}`);
+
+    //위의 결과값으로 반복문을 사용해서 각 Cell에 정보값 세팅 
+    for ( let i = 0; i < cellLeng; i++ ) {
+        // hTbody.rows[row-1].cells[i].innerHTML = `Data${i}`;
+        hTbody.rows[row-1].cells[i].innerHTML = `[${row-1}][${i}]`;
+        
+    }
 });
